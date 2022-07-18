@@ -16,10 +16,15 @@ functions:
     handler: src/handlers/hello.handler
     events:
       - http:
+          method: GET
+          path: /hello
+  createAuction:
+    handler: src/handlers/createAuction.handler
+    events:
+      - http:
           method: POST
           path: /auction
 
 custom:
   bundle:
     linting: false
-version: ${self:service}-auction-service
