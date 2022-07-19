@@ -12,12 +12,6 @@ provider:
   region: eu-west-1
 
 functions:
-  hello:
-    handler: src/handlers/hello.handler
-    events:
-      - http:
-          method: GET
-          path: /hello
   createAuction:
     handler: src/handlers/createAuction.handler
     events:

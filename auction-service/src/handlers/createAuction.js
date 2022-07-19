@@ -1,12 +1,14 @@
-async function createAuction(event, contex) {
-  const { title } = parse(event.body);
+async function createAuction(event) {
+  const body = JSON.parse(event.body);
   const now = new Date();
 
   const auction = {
-    title,
+    title: body?.title ?? '',
     status: 'OPEN',
     createdAt: now.toISOString(),
   };
+
+  console.log(event.body);
 
   return {
     statusCode: 201,
